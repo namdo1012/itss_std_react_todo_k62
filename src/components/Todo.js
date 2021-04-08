@@ -23,6 +23,16 @@ function Todo() {
 
   const [filter, setFilter] = React.useState("ALL");
 
+  const handleCheck = (checked) => {
+    const newItems = items.map((item) => {
+      if (item.key === checked.key) {
+        item.done = !item.done;
+      }
+      return item;
+    });
+    putItems(newItems);
+  };
+
   const handleAdd = (text) => {
     putItems([...items, { key: getKey(), text, done: false }]);
   };
@@ -44,7 +54,7 @@ function Todo() {
       <Filter onChange={handleFilterChange} value={filter} />
 
       {displayItems.map((item) => (
-        <TodoItem key={item.key} item={item} />
+        <TodoItem key={item.key} item={item} onCheck={handleCheck} />
       ))}
       <div className="panel-block">{displayItems.length} items</div>
       <div className="panel-block">
