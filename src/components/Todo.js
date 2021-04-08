@@ -27,9 +27,36 @@ function Todo() {
     /* テストコード 終了 */
   ]);
 
+  const [todo, setTodo] = useState();
+
+  function onAddToDo(e) {
+    if (e.key == "Enter") {
+      putItems((arr) => [
+        ...arr,
+        {
+          key: todo.key,
+          text: todo.text,
+        },
+      ]);
+      console.log(items);
+    }
+  }
+
+  function handleOnChange(event) {
+    setTodo({ key: getKey(), text: event.target.value });
+    console.log(event.target.value);
+  }
+
   return (
     <div className="panel">
       <div className="panel-heading">ITSS ToDoアプリ</div>
+      <input
+        className="input"
+        type="text"
+        placeholder="Enter new to do..."
+        onChange={handleOnChange}
+        onKeyDown={onAddToDo}
+      />
       {items.map((item) => (
         <TodoItem key={item.key} item={item} />
       ))}
