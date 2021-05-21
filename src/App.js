@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import "./styles/main.css";
 
 /* コンポーネント */
-import Todo from "./components/Todo";
+import Todo from './components/Todo';
 import Login from "./components/Login";
 import Upload from "./components/Upload";
 
@@ -39,7 +39,7 @@ function App() {
           <div class="navbar-item">
             <Upload
               userImage={user.image}
-              onSelectedImage={handleImageChanged}
+              onSletctedImage={handleImageChanged}
             />
             {user.name}
           </div>

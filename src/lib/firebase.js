@@ -53,8 +53,6 @@ export const clearTodoItem = async (item) => {
     });
 };
 
-export default firebase;
-
 export const uiConfig = {
   signInFlow: "popup",
   signInSuccessUrl: "/",
@@ -107,4 +105,6 @@ export const uploadImage = async (image) => {
     console.log(err);
   }
   return downloadUrl;
-};
+}; 
+
+export default firebase;

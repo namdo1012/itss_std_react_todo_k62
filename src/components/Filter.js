@@ -1,9 +1,9 @@
 import React from "react";
 
-function Filter({ value, onChange }) {
-  const handleClick = (key, e) => {
+function Filter({ onChange, value }) {
+  const handleClick = (selectedTab, e) => {
     e.preventDefault();
-    onChange(key);
+    onChange(selectedTab);
   };
 
   return (

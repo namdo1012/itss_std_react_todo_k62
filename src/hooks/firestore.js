@@ -43,6 +43,7 @@ function useFirestore() {
     setItems([]);
   };
 
+
   return [items, addItem, updateItem, clearItems];
 }
 
