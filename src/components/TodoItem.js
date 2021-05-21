@@ -1,10 +1,3 @@
-/* 
-  【TodoItemコンポーネント】
-　・Todoアイテムを表示する
-　・チェックボックスにチェックが入っているか管理する
-　・チェックボックスにチェックが入っているかアイテムをグレーアウトする
-*/
-
 import React from "react";
 
 function TodoItem({ item, onCheck }) {
@@ -14,8 +7,10 @@ function TodoItem({ item, onCheck }) {
 
   return (
     <label className="panel-block">
-      <input type="checkbox" onChange={handleChange} checked={item.done} />
-      <div className={item.done ? "has-text-grey-light" : ""}>{item.text}</div>
+      <input type="checkbox" checked={item.done} onChange={handleChange} />
+      <span className={item.done ? "has-text-grey-light" : ""}>
+        {item.text}
+      </span>
     </label>
   );
 }

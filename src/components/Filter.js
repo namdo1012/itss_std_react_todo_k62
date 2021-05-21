@@ -1,14 +1,9 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-/* 
-  【Filterコンポーネント】
-　・該当するTodoをステータス毎にで分けてリスト表示する
-　・タブで表示する
-　・サポートするステータスは「すべて」「未完了」「完了済み」
-*/
-function Filter({ value, onChange }) {
-  const handleClick = (key, e) => {
+import React from "react";
+
+function Filter({ onChange, value }) {
+  const handleClick = (selectedTab, e) => {
     e.preventDefault();
-    onChange(key);
+    onChange(selectedTab);
   };
 
   return (
