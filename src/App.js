@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-
 /* スタイルシート */
-import './styles/main.css';
+import "./styles/main.css";
 
 /* コンポーネント */
 import Todo from './components/Todo';
@@ -56,7 +55,6 @@ function App() {
       return <Login />;
     }
   };
-
   return (
     <div className="container is-fluid">
       <header class="navbar">
